@@ -10,6 +10,10 @@ app.set('view engine', 'handlebars')
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 app.use('/public', express.static(path.join(__dirname, 'public')))
+app.use(
+  '/bootstrap',
+  express.static(path.join(__dirname, '/node_modules/bootstrap/dist/'))
+)
 
 const mailsRoutes = require('./routes/mailRoutes')
 const imagesRoutes = require('./routes/imagesRoutes')
